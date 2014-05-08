@@ -1,6 +1,5 @@
 class Organiser
   include PaginatedHer::Model
-  include HasDroomUser
   belongs_to :event
 
   use_api PUB
