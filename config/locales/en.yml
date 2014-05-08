@@ -1,7 +1,4 @@
 en:
   activerecord:
     attributes:
-      cap_client:
-        application:
-        round:
-        round_type:
+      pub_client:

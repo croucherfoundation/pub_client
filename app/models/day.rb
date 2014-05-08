@@ -1,12 +1,9 @@
-class Event
+class Day
   include PaginatedHer::Model
-  include HasGrant
-  has_many :organisers
-  has_many :images
-  has_many :days
+  belongs_to :event
 
   use_api PUB
-  collection_path "/api/events"
+  collection_path "/api/days"
 
   after_save :decache
 
@@ -14,8 +11,8 @@ class Event
     DateTime.parse(date) if date?
   end
   
-  def organised_by?(user)
-    organisers.map(&:user_uid).include?(user.uid)
+  def time
+    datetime.time_of_day if datetime?
   end
 
   protected
