@@ -1,8 +1,8 @@
-class RoundType
+class Collection
   include PaginatedHer::Model
 
-  use_api CAP
-  collection_path "/api/round_types"
+  use_api PUB
+  collection_path "/api/collections"
 
   after_save :decache
 

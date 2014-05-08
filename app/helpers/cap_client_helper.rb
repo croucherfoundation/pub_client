@@ -1,12 +1,12 @@
-module CapClientHelper
+module PubClientHelper
 
-  def cap_url(path)
-    URI.join(cap_host, path).to_s
+  def pub_url(path)
+    URI.join(pub_host, path).to_s
   end
 
-  def cap_host
-    Settings.cap[:protocol] ||= 'http'
-    "#{Settings.cap.protocol}://#{Settings.cap.host}"
+  def pub_host
+    Settings.pub[:protocol] ||= 'http'
+    "#{Settings.pub.protocol}://#{Settings.pub.host}"
   end
 
 end
