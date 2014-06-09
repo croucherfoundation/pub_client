@@ -2,6 +2,7 @@ class Event
   include PaginatedHer::Model
   include HasGrant
   has_many :organisers
+  has_many :participants
   has_many :images
   has_many :days
 
@@ -16,6 +17,10 @@ class Event
   
   def organised_by?(user)
     organisers.map(&:user_uid).include?(user.uid)
+  end
+
+  def participated_in_by?(user)
+    participants.map(&:user_uid).include?(user.uid)
   end
 
   protected

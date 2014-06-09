@@ -1,9 +1,9 @@
-class Organiser
+class Participant
   include PaginatedHer::Model
   belongs_to :event
 
   use_api PUB
-  collection_path "/api/organisers"
+  collection_path "/api/participants"
 
   after_save :decache
 
