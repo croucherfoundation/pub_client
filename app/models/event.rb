@@ -1,5 +1,5 @@
 class Event
-  include PaginatedHer::Model
+  include Her::JsonApi::Model
   include HasGrant
   has_many :organisers
   has_many :participants

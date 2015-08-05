@@ -1,5 +1,5 @@
 class Participant
-  include PaginatedHer::Model
+  include Her::JsonApi::Model
   belongs_to :event
 
   use_api PUB

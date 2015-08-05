@@ -1,5 +1,5 @@
 class Image
-  include PaginatedHer::Model
+  include Her::JsonApi::Model
   belongs_to :page
 
   use_api PUB
