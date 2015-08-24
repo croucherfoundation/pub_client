@@ -9,7 +9,9 @@ class Event
   use_api PUB
   collection_path "/api/events"
 
-  after_save :decache
+  # temporary while we are not yet sending jsonapi data back to core properly
+  include_root_in_json true
+  parse_root_in_json false
 
   def datetime
     DateTime.parse(date) if date?
@@ -21,12 +23,6 @@ class Event
 
   def participated_in_by?(user)
     participants.map(&:user_uid).include?(user.uid)
-  end
-
-  protected
-
-  def decache
-    $cache.flush_all if $cache
   end
 
 end

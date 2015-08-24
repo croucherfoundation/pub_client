@@ -4,5 +4,4 @@ require 'pub_client/engine'
 
 module PubClient
   class AuthRequired < StandardError; end
-  
 end
