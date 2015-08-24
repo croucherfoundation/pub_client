@@ -2,11 +2,11 @@ module HasPageCollection
   extend ActiveSupport::Concern
 
   def page_collection
-    Page.find(page_id)
+    PageCollection.find(page_collection_id)
   end
   
-  def page?
-    page_id && page
+  def page_collection?
+    page_collection_id && page_collection
   end
 
 end
