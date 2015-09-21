@@ -1,6 +1,6 @@
 class Event
   include Her::JsonApi::Model
-  include HasGrant
+  # include HasProject
   has_many :organisers
   has_many :participants
   has_many :images
