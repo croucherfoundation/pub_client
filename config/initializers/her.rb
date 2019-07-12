@@ -2,7 +2,7 @@ require 'settings'
 require 'her'
 require 'faraday_middleware'
 
-api_url = ENV['PUB_URL'] || "#{Settings.pub.protocol}://#{Settings.pub.api_host}:#{Settings.pub.api_port}"
+api_url = ENV['PUB_API_URL'] || "#{Settings.pub.protocol}://#{Settings.pub.api_host}:#{Settings.pub.api_port}"
 
 PUB = Her::API.new
 PUB.setup url: api_url do |c|
