@@ -1,7 +1,7 @@
 class Page
   include Her::JsonApi::Model
 
-  use_api PUB
+  use_api PUB_API
   collection_path "/api/pages"
   has_many :images
   belongs_to :page_collection

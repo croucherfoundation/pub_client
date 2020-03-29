@@ -5,8 +5,7 @@ module PubClientHelper
   end
 
   def pub_host
-    Settings.pub[:protocol] ||= 'http'
-    "#{Settings.pub.protocol}://#{Settings.pub.host}"
+    ENV['PUB_URL'] || "#{Settings.pub.protocol}://#{Settings.pub.host}"
   end
 
 end

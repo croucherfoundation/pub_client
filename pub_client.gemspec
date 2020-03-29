@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = PubClient::VERSION
   s.authors     = ["William Ross"]
   s.email       = ["will@spanner.org"]
-  s.homepage    = "https://github.com/spanner/pub_client"
+  s.homepage    = "https://github.com/croucherfoundation/pub_client"
   s.summary     = "Holds in one place all the gubbins necessary to act as a client to the Croucher publication system."
   s.description = "For now just a convenience and maintenance simplifier."
 

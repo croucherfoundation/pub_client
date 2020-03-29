@@ -1,7 +1,7 @@
 class PageCollection
   include Her::JsonApi::Model
 
-  use_api PUB
+  use_api PUB_API
   collection_path "/api/page_collections"
 
   # temporary while we are not yet sending jsonapi data back to core properly
