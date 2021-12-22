@@ -1,8 +1,12 @@
-class Participant
-  include Her::JsonApi::Model
+class Participant < ActiveResource::Base
+  include FormatApiResponse
+  include PubActiveResourceConfig
+
   belongs_to :event
 
-  use_api PUB
-  collection_path "/api/participants"
+  def save
+    self.prefix_options[:participant] = self.attributes
+    super
+  end
 
 end

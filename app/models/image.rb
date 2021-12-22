@@ -1,8 +1,12 @@
-class Image
-  include Her::JsonApi::Model
+class Image < ActiveResource::Base
+  include FormatApiResponse
+  include PubActiveResourceConfig
+
   belongs_to :page
 
-  use_api PUB
-  collection_path "/api/images"
+  def save
+    self.prefix_options[:image] = self.attributes
+    super
+  end
 
 end

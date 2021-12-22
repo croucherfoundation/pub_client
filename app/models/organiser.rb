@@ -1,8 +1,7 @@
-class Organiser
-  include Her::JsonApi::Model
-  belongs_to :event
+class Organiser < ActiveResource::Base
+  include FormatApiResponse
+  include PubActiveResourceConfig
 
-  use_api PUB
-  collection_path "/api/organisers"
+  belongs_to :event
 
 end
