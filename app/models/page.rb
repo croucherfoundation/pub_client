@@ -23,6 +23,10 @@ class Page < ActiveResource::Base
     super
   end
 
+  def images
+    Image.find(:all, params: {page_id: self.id})
+  end
+
   def published?
     published_at.present?
   end
