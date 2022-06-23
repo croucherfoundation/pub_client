@@ -1,5 +1,5 @@
 class Image < ActiveResource::Base
-  include FormatApiResponse
+  include PubFormatApiResponse
   include PubActiveResourceConfig
 
   belongs_to :page

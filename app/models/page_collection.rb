@@ -1,5 +1,5 @@
 class PageCollection < ActiveResource::Base
-  include FormatApiResponse
+  include PubFormatApiResponse
   include PubActiveResourceConfig
 
   def self.new_with_defaults(attributes={})

@@ -1,5 +1,5 @@
 class Day < ActiveResource::Base
-  include FormatApiResponse
+  include PubFormatApiResponse
   include PubActiveResourceConfig
 
   belongs_to :event

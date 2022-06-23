@@ -1,5 +1,5 @@
 class Event < ActiveResource::Base
-  include FormatApiResponse
+  include PubFormatApiResponse
   include PubActiveResourceConfig
 
   has_many :organisers
