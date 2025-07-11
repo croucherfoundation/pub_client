@@ -1,14 +1,18 @@
-require 'settings'
+require 'faraday'
+require 'json'
 require 'her'
-require 'faraday_middleware'
+require 'her/middleware/json_api_parser'
 
 api_url = ENV['PUB_API_URL'] || "#{Settings.pub.protocol}://#{Settings.pub.api_host}:#{Settings.pub.api_port}"
 
 PUB = Her::API.new
 PUB.setup url: api_url do |c|
-  # Request
-  c.use FaradayMiddleware::EncodeJson
-  # Response
+  # Request: encode JSON manually
+  c.request :json
+
+  # Response: parse JSON API
   c.use Her::Middleware::JsonApiParser
-  c.use Faraday::Adapter::NetHttp
+
+  # Adapter
+  c.adapter Faraday.default_adapter
 end
