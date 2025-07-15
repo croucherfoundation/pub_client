@@ -3,7 +3,7 @@ require 'json'
 require 'her'
 require 'her/middleware/json_api_parser'
 
-api_url = ENV['PUB_API_URL'] || "#{Settings.pub.protocol}://#{Settings.pub.api_host}:#{Settings.pub.api_port}"
+api_url = ENV['PUB_API_URL']
 
 PUB = Her::API.new
 PUB.setup url: api_url do |c|
