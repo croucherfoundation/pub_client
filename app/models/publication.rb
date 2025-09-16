@@ -12,9 +12,11 @@ class Publication
   parse_root_in_json false
 
   class << self
-    def find_by_slug(pc_slug, slug)
-      get "/api/#{pc_slug}/#{slug}"
+    def find_by_slug(pc_slug, slug, meta = false)
+      url = "/api/#{pc_slug}/#{slug}"
+      url += "?meta=true" if meta
 
+      get url
     rescue JSON::ParserError, Her::Errors::ParseError
       nil
     end
