@@ -36,5 +36,16 @@ class Publication
     rescue JSON::ParserError, Her::Errors::ParseError, StandardError
       []
     end
+
+    def search_memo(slugs, user_uid: nil, limit: 20)
+      return [] if slugs.blank?
+
+      url = "/api/memo/find?q=#{ERB::Util.url_encode(slugs.join(','))}&limit=#{limit}"
+      url += "&user_uid=#{ERB::Util.url_encode(user_uid)}" if user_uid.present?
+
+      get(url)
+    rescue JSON::ParserError, Her::Errors::ParseError, StandardError
+      []
+    end
   end
 end
